@@ -1,3 +1,5 @@
+import datetime
+import time
 import openpyxl
 
 
@@ -20,3 +22,12 @@ def get_received_excel(path):
         row_dict = {'goods_name': goods_name.value, 'asset_numb': asset_numb.value, 'top': top.value, 'cloud': cloud.value}
         received_list.append(row_dict)
     return received_list
+
+
+def get_current_time():
+    # 获取当前时间
+    dtime = datetime.datetime.now()
+    un_time = time.mktime(dtime.timetuple())
+    # 将unix时间戳转换为“当前时间”格式
+    times = datetime.datetime.fromtimestamp(un_time)
+    return str(times)
