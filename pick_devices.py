@@ -42,6 +42,7 @@ class PickDevices(object):
 
     def clear_screen(self):
         self.content_label.configure(text="")
+        self.numb_name_lable.configure(text="")
 
     def init_view(self):
         self.window.geometry('800x600')
